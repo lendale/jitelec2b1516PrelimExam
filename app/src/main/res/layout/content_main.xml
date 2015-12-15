@@ -14,7 +14,7 @@
     tools:showIn="@layout/activity_main">
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/tvSpeed"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/seekBar"
@@ -31,12 +31,12 @@
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_below="@+id/textView2"
+        android:layout_below="@+id/tvCounter"
         android:max="1000"
         android:progress="100"/>
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/tvCounter"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
@@ -58,24 +58,26 @@
         android:orientation="vertical">
 
         <RadioButton
-            android:id="@+id/radioButton"
+            android:id="@+id/radioButtonInc"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:checked="true"
-            android:text="New RadioButton"/>
+            android:text="@string/increment"/>
 
         <RadioButton
-            android:id="@+id/radioButton2"
+            android:id="@+id/radioButtonDec"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="New RadioButton"/>
+            android:text="@string/decrement"/>
     </RadioGroup>
 
     <ToggleButton
         android:id="@+id/toggleButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/textView"
+        android:layout_below="@+id/tvSpeed"
         android:layout_centerHorizontal="true"
-        android:text="New ToggleButton"/>
+        android:checked="false"
+        android:textOn="STOP"
+        android:textOff="START" />
 </RelativeLayout>
