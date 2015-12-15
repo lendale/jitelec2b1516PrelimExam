@@ -14,7 +14,7 @@
     tools:showIn="@layout/activity_main">
 
     <TextView
-        android:id="@+id/tvSpeed"
+        android:id="@+id/tvCounter"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/seekBar"
@@ -31,12 +31,12 @@
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_below="@+id/tvCounter"
+        android:layout_below="@+id/tvSpeed"
         android:max="1000"
         android:progress="100"/>
 
     <TextView
-        android:id="@+id/tvCounter"
+        android:id="@+id/tvSpeed"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
@@ -75,7 +75,7 @@
         android:id="@+id/toggleButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/tvSpeed"
+        android:layout_below="@+id/tvCounter"
         android:layout_centerHorizontal="true"
         android:checked="false"
         android:textOn="STOP"

@@ -4,18 +4,14 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.CompoundButton;
 import android.widget.RadioButton;
 import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.ToggleButton;
 
-import org.w3c.dom.Text;
-
-public class MainActivity extends AppCompatActivity implements CompoundButton.OnCheckedChangeListener {
+public class MainActivity extends AppCompatActivity implements SeekBar.OnSeekBarChangeListener {
 
     private static final String TAG = "";
     private ToggleButton btnSwitch;
@@ -40,7 +36,8 @@ public class MainActivity extends AppCompatActivity implements CompoundButton.On
         rdBtnDec = (RadioButton) findViewById(R.id.radioButtonDec);
 
         //Ser the appropriate listeners
-        btnSwitch.setOnCheckedChangeListener(this);
+        //btnSwitch.setOnCheckedChangeListener((CompoundButton.OnCheckedChangeListener) this);
+        seekBarSpeed.setOnSeekBarChangeListener(this);
 
         final Handler handler = new Handler();
 
@@ -76,11 +73,17 @@ public class MainActivity extends AppCompatActivity implements CompoundButton.On
     }
 
     @Override
-    public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-        if (isChecked) {
-            Log.d(TAG, "onCheckedChanged: STOP");
-        } else {
-            Log.d(TAG, "onCheckedChanged: START");
-        }
+    public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+        tvSpeed.setText(String.valueOf(new Integer(progress)));
+    }
+
+    @Override
+    public void onStartTrackingTouch(SeekBar seekBar) {
+
+    }
+
+    @Override
+    public void onStopTrackingTouch(SeekBar seekBar) {
+
     }
 }
